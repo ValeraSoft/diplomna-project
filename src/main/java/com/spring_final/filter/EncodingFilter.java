@@ -1,11 +1,12 @@
 package com.spring_final.filter;
 
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 
 import javax.servlet.*;
 import java.io.IOException;
 
-@Controller
+@Component
 public class EncodingFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {

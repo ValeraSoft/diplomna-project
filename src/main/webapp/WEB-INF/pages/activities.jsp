@@ -155,6 +155,18 @@
                                     </span>
                                     <span><fmt:message key="activities.activity.duration.minutes"/></span>
                                 </p>
+                                <c:if test="${activity.status !=  'Completed' }">
+                                    <span>Files:</span>
+                                    <form action = "activityAddFile?activityId=${activity.id}" method = "post"
+                                        enctype = "multipart/form-data">
+                                        <input type="hidden" id="activityId" name="postId" value="${activity.id}" />
+                                    <input type = "file" name = "file" size = "50" />
+                                    <br />
+                                    <input type = "submit" class="mt-2" value = "Upload File" />
+                                </form>
+                                </c:if>
+                                <a href="getFiles?activityId=${activity.id}">download files</a>
+
                                 <p>
                                     <span><fmt:message key="activities.activity.users"/></span>
                                     <c:forEach items="${activity.users}" var="user">

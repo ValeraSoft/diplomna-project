@@ -13,6 +13,8 @@ public class LocalizationFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
 
+        System.out.println("Locale changed");
+
         HttpServletRequest request = (HttpServletRequest) servletRequest;
 
         if(request.getParameter("lang") != null){

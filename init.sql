@@ -19,6 +19,16 @@ CREATE TABLE `Activity`
   DEFAULT CHARSET = utf8mb4
   COLLATE = utf8mb4_0900_ai_ci;
 
+CREATE TABLE `ActivityFile`
+(
+    `id`          int NOT NULL,
+    `fileName`    TEXT DEFAULT NULL,
+    `activityId`  int NOT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4
+  COLLATE = utf8mb4_0900_ai_ci;
+
 -- Table structure for table `ActivityRequest`
 DROP TABLE IF EXISTS `ActivityRequest`;
 CREATE TABLE `ActivityRequest`
